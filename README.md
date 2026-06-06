@@ -25,7 +25,7 @@ Projekt wykonany w SwiftUI z wykorzystaniem MVVM, PhotosPicker, @AppStorage i an
 ---
 
 ## 🧱 Architektura
-Projekt oparty na **MVVM**:
+Projekt oparty na **MVVM**
 
 
 ---
