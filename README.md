@@ -1,55 +1,124 @@
-# 📸 PhotoApp  
-Aplikacja iOS do zarządzania zdjęciami, profilami użytkowników oraz prostą personalizacją interfejsu.  
-Projekt wykonany w SwiftUI z wykorzystaniem MVVM, PhotosPicker, @AppStorage i animacji.
+📸 PhotoApp
 
----
+Nowoczesna aplikacja do zarządzania zdjęciami, albumami i udostępnieniami.
+Projekt zawiera backend (.NET 8 Web API) oraz frontend (iOS SwiftUI) w jednym repozytorium.
 
-## 🚀 Funkcje
+✨ Funkcjonalności
 
-### 👤 Profil użytkownika
-- Wyświetlanie nazwy użytkownika  
-- Avatar z możliwością zmiany (PhotosPicker)  
-- Animacja avatara (spring)  
-- Gradientowy nagłówek profilu  
-- Generowanie inicjałów, gdy avatar nie jest ustawiony  
+🔐 Rejestracja i logowanie (JWT)
 
-### 🎨 Personalizacja
-- Wybór motywu aplikacji: **systemowy / jasny / ciemny**  
-- Przełącznik powiadomień (zapis w @AppStorage)
+🖼️ Upload zdjęć (multipart/form-data)
 
-### 🔐 Logowanie
-- Przechowywanie tokenu użytkownika  
-- Obsługa stanu logowania  
-- Wylogowanie jednym kliknięciem  
+📁 Albumy — tworzenie, usuwanie, przypisywanie zdjęć
 
----
+🔗 Udostępnianie zdjęć innym użytkownikom
 
-## 🧱 Architektura
-Projekt oparty na **MVVM**
+👤 Obsługa wielu użytkowników
+
+📱 Aplikacja iOS w SwiftUI (MVVM)
+
+🛠️ Technologie
+
+Backend
+
+.NET 8
+
+ASP.NET Core Web API
+
+Entity Framework Core
+
+SQLite
+
+JWT Authentication
+
+BCrypt
+
+Frontend
+
+SwiftUI
+
+MVVM
+
+PhotosPicker
+
+AsyncImage
+
+URLSession + async/await
+
+🔌 Endpointy API
+
+Auth
+
+Metoda	Endpoint	Opis
+
+POST	/api/auth/register	Rejestracja
+
+POST	/api/auth/login	Logowanie
 
 
----
+Photos
 
-## 🛠 Technologie
-- **SwiftUI**
-- **PhotosUI**
-- **UIKit (UIImage)**
-- **Combine**
-- **@AppStorage**
-- **MVVM**
+Metoda	Endpoint	Opis
 
----
+GET	/api/photos	Pobierz zdjęcia
 
-## 📱 Wymagania
-- iOS 16 lub nowszy  
-- Xcode 15+  
+POST	/api/photos/upload	Upload zdjęcia
 
----
+DELETE	/api/photos/{id}	Usuń zdjęcie
 
-## ▶️ Uruchamianie projektu
-
-1. Sklonuj repozytorium:
-   ```bash
-   git clone https://github.com/aleksandrawalkowiak/PhotoApp.git
+PUT	/api/photos/{photoId}/album/{albumId}	Dodaj zdjęcie do albumu
 
 
+Albums
+
+Metoda	Endpoint	Opis
+
+GET	/api/albums	Pobierz albumy
+
+POST	/api/albums	Utwórz album
+
+DELETE	/api/albums/{id}	Usuń album
+
+
+Shares
+
+Metoda	Endpoint	Opis
+
+POST	/api/shares	Udostępnij zdjęcie
+
+GET	/api/shares	Pobierz udostępnione zdjęcia
+
+DELETE	/api/shares/{id}	Usuń udostępnienie
+
+
+▶️ Uruchamianie backendu
+
+1. Klonowanie repozytorium
+   
+bash
+
+git clone https://github.com/decentusername421/PhotoApp.git
+
+cd PhotoApp
+
+3. Migracje bazy
+   
+bash
+
+dotnet ef database update
+
+5. Start API
+   
+bash
+
+dotnet run
+
+https://localhost:<port>
+
+📱 Uruchamianie frontendu (iOS)
+
+Otwórz projekt w Xcode
+
+Ustaw adres backendu w ApiService
+
+Uruchom na simulatorze lub urządzeniu
