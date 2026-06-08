@@ -97,7 +97,7 @@ DELETE	/api/shares/{id}	Usuń udostępnienie
    
 bash
 
-git clone https://github.com/decentusername421/PhotoApp.git
+git clone https://github.com/aleksandrawalkowiak/PhotoApp.git
 
 cd PhotoApp
 
@@ -113,7 +113,7 @@ bash
 
 dotnet run
 
-https://localhost:<port>
+https://localhost:<<port>>
 
 📱 Uruchamianie frontendu (iOS)
 
